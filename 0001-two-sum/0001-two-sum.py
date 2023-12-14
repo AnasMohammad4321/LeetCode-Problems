@@ -5,8 +5,9 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
+        mydict = {}
         for i in range(len(nums)):
-            for j in range(i+1, len(nums)):
-                if (nums[i] + nums[j] == target):
-                    return [i, j]
-        
+            difference = target - nums[i]
+            if (difference in mydict):
+                return [i, mydict[difference]]
+            mydict[nums[i]] = i
