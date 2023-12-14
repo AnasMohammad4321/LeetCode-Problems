@@ -10,9 +10,12 @@ class Solution(object):
         steps = []
         for i in range(n+1):
             steps.append(0)
-        steps[0] = 1
-        steps[1] = 1
+        zero = 1
+        one = 1
         
         for i in range(2, n+1):
-            steps[i] = steps[i-1] + steps[i-2]
-        return steps[n]
+            nest = zero + one
+            zero = one
+            one = nest
+            
+        return nest
