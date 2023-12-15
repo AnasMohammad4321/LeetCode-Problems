@@ -6,7 +6,6 @@ class Solution(object):
         :rtype: int
         """
         j = 0
-        nums.sort()
         for i in range(len(nums)):
             if (nums[i] != val):
                 nums[j] = nums[i]
